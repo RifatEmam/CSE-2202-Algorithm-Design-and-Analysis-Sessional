@@ -6,10 +6,10 @@ int partition(int a[], int l, int h) {
     int i = l, j = h;
 
     while (i < j) {
-        while (a[i] <= pivot && i < h) { // Ensure i does not exceed bounds
+        while (a[i] <= pivot && i < h) { 
             i++;
         }
-        while (a[j] > pivot) { // No need to check bounds for j
+        while (a[j] > pivot) { 
             j--;
         }
         if (i < j) {
@@ -22,7 +22,7 @@ int partition(int a[], int l, int h) {
 
 void quicksort(int a[], int l, int h) {
     if (l < h) {
-        int j = partition(a, l, h); // Fix variable declaration
+        int j = partition(a, l, h); 
         quicksort(a, l, j - 1);
         quicksort(a, j + 1, h);
     }
@@ -32,7 +32,7 @@ int main() {
     int n;
     cout << "Enter an array size: ";
     cin >> n;
-    int a[n]; // Variable Length Array (VLA) - allowed in GCC but not standard C++
+    int a[n]; 
     cout << "Enter an array Elements: ";
     for (int i = 0; i < n; i++) {
         cin >> a[i];
